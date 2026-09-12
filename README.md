@@ -10,8 +10,9 @@ This project builds a clean **client-side Date Difference utility** using **HTML
 
 This is a **single-page utility** with a modern split layout:
 
-🔹 Left side: date inputs + calculation options + buttons
-🔹 Right side: results dashboard (days/weeks/months/years) + readable breakdown
+🔹 Left side: date inputs + calculation options + buttons.
+
+🔹 Right side: results dashboard (days/weeks/months/years) + readable breakdown.
 
 It focuses on **correct calendar logic**, not simplistic “days ÷ 30” approximations.
 
@@ -20,28 +21,35 @@ It focuses on **correct calendar logic**, not simplistic “days ÷ 30” approx
 **🔹 Safe Date Parsing (Timezone-Proof)**
 
 ➡️ Parses `"YYYY-MM-DD"` manually instead of `new Date("YYYY-MM-DD")`.
+
 ➡️ Prevents timezone shifts that can change the day unexpectedly.
 
 **🔹 Date Normalization (Strip Time)**
 
 ➡️ Converts all dates to midnight using `stripTime()`
+
 ➡️ Ensures comparisons are “date-only”, not affected by hours/minutes.
 
 **🔹 Exact Day Difference**
 
 ➡️ Uses real milliseconds difference → converts to days using a constant `msPerDay`.
+
 ➡️ Gives accurate **Total Days** and **Total Weeks**.
 
 **🔹 Calendar Month Difference (Full Months Only)**
 
 ➡️ Counts month boundaries between start/end.
+
 ➡️ If end-day is before start-day → last month is not complete → subtract 1 month.
+
 ➡️ Produces “completed months” like real business rules.
 
 **🔹 Calendar Year Difference (Full Years Only)**
 
 ➡️ Counts year boundaries between start/end.
+
 ➡️ If end date is before the anniversary (month/day) → subtract 1 year.
+
 ➡️ Produces “completed years” like contracts and age rules.
 
 **🔹 Auto-Swap (User Input Protection) ✅**
@@ -54,16 +62,19 @@ It focuses on **correct calendar logic**, not simplistic “days ÷ 30” approx
 **🔹 Inclusive Day Count (Optional Rule)**
 
 ➡️ Adds 1 day when enabled (counts both start and end dates).
+
 ➡️ Useful for booking, HR days counting, and reporting ranges.
 
 **🔹 Friendly UI Feedback**
 
 ➡️ Message box shows ✅ success / ❌ error / neutral hints.
+
 ➡️ Status chip switches between “Waiting…”, “Ready…”, and “Calculated ✅”.
 
 **🔹 Demo + Reset Workflow**
 
 ➡️ Demo sets “Last 90 Days” with one click.
+
 ➡️ Clear restores defaults and removes all outputs.
 
 ## &#x20;
@@ -71,9 +82,13 @@ It focuses on **correct calendar logic**, not simplistic “days ÷ 30” approx
 ## 🔗 Interconnection Between Concepts
 
 🔹 Safe parsing + strip time → prevents timezone bugs → accurate results.
+
 🔹 Auto-swap → fewer user mistakes → smoother UX.
+
 🔹 Exact days/weeks → precise durations → correct time reporting.
+
 🔹 Calendar months/years → realistic boundary-based math → matches business rules.
+
 🔹 Options + UI feedback → flexible tool → usable in real projects.
 
 ## 🏁 Conclusion
